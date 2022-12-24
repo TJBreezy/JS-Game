@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        border-radius: 5px;
+        border-width: 2px;
+        width: 100px;
+        margin-bottom: 10px;
+      }
+      p {
+        border-bottom: solid;
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <p id="num1"></p>
+    <p id="num2"></p>
+    <button id="add">Add</button>
+    <button id="sub">Subtract</button>
+    <button id="div">Divide</button>
+    <button id="mul">Multiply</button>
+    <p id="output"></p>
+    <script>
+      let num1 = 8;
+      let num2 = 5;
+      const add = document.getElementById("add");
+      const sub = document.getElementById("sub");
+      const div = document.getElementById("div");
+      const mul = document.getElementById("mul");
+      let output = document.getElementById("output");
+
+      document.getElementById("num1").textContent = num1;
+      document.getElementById("num2").textContent = num2;
+
+      add.onclick = calAdd;
+      sub.onclick = calSub;
+      div.onclick = calDiv;
+      mul.onclick = calMul;
+
+      function calAdd() {
+        output.textContent =  num1 + num2;
+      }
+
+      function calSub() {
+        output.textContent = num1 - num2;
+      }
+
+      function calDiv() {
+        output.textContent = num1 / num2;
+      }
+
+      function calMul() {
+        output.textContent = num1 * num2;
+      }
+    </script>
+  </body>
+</html>
